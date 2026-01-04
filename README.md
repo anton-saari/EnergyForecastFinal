@@ -17,24 +17,6 @@ This project implements a machine learning pipeline to forecast hourly electrici
 * **Validation:** 8-fold Time Series Cross-Validation to prevent data leakage and ensure robustness across different seasons.
 * **Forecast Generation:** A complete pipeline to generate a wide-format 48-hour forecast CSV from raw data.
 
-## 🛠️ Tech Stack
-
-* **Python 3.10+**
-* **Pandas & NumPy:** Data manipulation and time-series handling.
-* **LightGBM:** High-performance gradient boosting framework.
-* **Astral:** For calculating sun position and solar features.
-* **Scikit-learn:** For metrics and cross-validation utilities.
-* **Matplotlib:** For visualizing forecasts vs. actuals.
-
-## 📂 Data Requirements
-
-The project expects the following input CSV files:
-
-* `train.csv`: Historical hourly consumption data.
-* `client.csv`: Static client information (e.g., business type, contract type).
-* `weather_history.csv` & `weather_forecast.csv`: Historical and forecasted weather data.
-* `electricity_prices.csv` & `electricity_prices_forecast.csv`: Electricity spot prices.
-
 ## ⚙️ Installation
 
 1.  Clone the repository:
@@ -79,6 +61,7 @@ The model is trained using an **8-fold Time Series Split** scheme. This ensures 
 ## 📊 Results
 
 The final model produces a robust 48-hour forecast that accounts for weather changes, solar activity, and historical consumption patterns.
+* **Final forecasted average MAPE:** 6.55%
 
-![Forecast Example](https://via.placeholder.com/800x400?text=Example+Forecast+Visualization)
-*(You can replace this with an actual plot from your notebook)*
+<img width="1242" height="552" alt="image" src="https://github.com/user-attachments/assets/9c82694f-a637-4859-bbba-e5fa0ccc4cd0" />
+
