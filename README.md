@@ -14,6 +14,7 @@ This project implements a machine learning pipeline to forecast hourly electrici
     * **Solar Data:** Dynamic calculation of Sun Elevation and "Is Sun Up" flags using the `astral` library, based on geographic coordinates of Finnish cities.
     * **Weather:** Temperature, Humidity, Rain, and Wind Speed integration.
     * **Pricing:** 24-hour lagged electricity spot prices.
+    * **Group specific:** private/enterprise, type of electricity contract.
 * **Validation:** 8-fold Time Series Cross-Validation to prevent data leakage and ensure robustness across different seasons.
 * **Forecast Generation:** A complete pipeline to generate a wide-format 48-hour forecast CSV from raw data.
 
