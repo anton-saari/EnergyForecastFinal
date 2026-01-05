@@ -67,5 +67,4 @@ The model is trained using an **8-fold Time Series Split** scheme where each fol
 
 * **Final forecasted average MAPE:** 6.44%
 
-<img width="1242" height="552" alt="image" src="https://github.com/user-attachments/assets/9c82694f-a637-4859-bbba-e5fa0ccc4cd0" />
-
+![alt text](Visualizations/Final_Forecast.png)
