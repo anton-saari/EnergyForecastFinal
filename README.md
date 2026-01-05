@@ -61,10 +61,10 @@ To capture the cyclic nature of energy usage, the model uses:
 ### 3. Training & Validation
 The model is trained using an **8-fold Time Series Split** scheme where each fold represents one month. This ensures the model is tested on "future" data it hasn't seen during training, simulating real-world forecasting conditions. It also makes it easy to analyze the performance of the model in different months.
 
-* **CV Scores across folds (MAPE):**[5.96%, 5.36%, 7.04%, 8.40%, 5.44%, 4.23%, 4.61%, 5.36%]
+* **CV Scores across folds (MAPE):** [5.96%, 5.36%, 7.04%, 8.40%, 5.44%, 4.23%, 4.61%, 5.36%]
 * april and may performed the worst, while july and august performed the best.
  
- * **CV Score Average (MAPE):**~5.8%
+* **CV Score Average (MAPE):** ~5.8%
 
 ## 📊 Results
 
