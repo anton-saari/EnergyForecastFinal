@@ -1,10 +1,10 @@
 # EnergyForecastFinal
 
-# Energy Consumption Forecasting ⚡📈
+# Energy Consumption Forecasting
 
 This project implements a machine learning pipeline to forecast hourly electricity consumption for various consumer groups 48 hours into the future. It leverages **LightGBM**, robust time-series feature engineering, and astronomical data to achieve accurate predictions.
 
-## 🚀 Key Features
+## Key Features
 
 * **Model:** LightGBM Regressor (Gradient Boosting Machine) optimized for time-series forecasting.
 * **Metric:** Mean Absolute Percentage Error (MAPE).
@@ -18,7 +18,7 @@ This project implements a machine learning pipeline to forecast hourly electrici
 * **Validation:** 8-fold Time Series Cross-Validation to prevent data leakage and ensure robustness across different seasons.
 * **Forecast Generation:** A complete pipeline to generate a wide-format 48-hour forecast CSV from raw data.
 
-## ⚙️ Installation
+## Installation
 
 1.  Clone the repository:
     ```bash
@@ -31,7 +31,7 @@ This project implements a machine learning pipeline to forecast hourly electrici
     pip install pandas numpy lightgbm astral scikit-learn matplotlib
     ```
 
-## 🏃‍♂️ Usage
+## Usage
 
 1.  Ensure all data files are placed in the root directory.
 2.  Open the Jupyter Notebook:
@@ -44,7 +44,7 @@ This project implements a machine learning pipeline to forecast hourly electrici
     * **Columns:** `group_id` (Consumer Group IDs)
     * **Values:** Predicted consumption (kWh)
 
-## 🧠 Methodology
+## Methodology
 
 ### 1. Data Preprocessing
 The pipeline cleans raw data, handles missing values, and merges disparate data sources (weather, price, client info) into a unified time-series dataframe.
@@ -66,7 +66,7 @@ The model is trained using an **8-fold Time Series Split** scheme where each fol
  
 * **CV Score Average (MAPE):** ~5.8%
 
-## 📊 Results
+## Results
 
 * **Final forecasted average MAPE (01.10.2024-02.10.2024):** 6.44%
 
