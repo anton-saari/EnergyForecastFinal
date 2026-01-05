@@ -49,20 +49,23 @@ This project implements a machine learning pipeline to forecast hourly electrici
 ### 1. Data Preprocessing
 The pipeline cleans raw data, handles missing values, and merges disparate data sources (weather, price, client info) into a unified time-series dataframe.
 
-### 2. Advanced Feature Engineering
+### 2. Feature Engineering
 To capture the cyclic nature of energy usage, the model uses:
+
 * **Cyclical Encoding:** Months and seasons are treated mathematically to preserve their cyclic nature (e.g., December is close to January).
-* **Astronomical Features:** Instead of just using "hour of day", the model calculates the exact sun elevation angle for each location. This helps the model distinguish between a dark winter afternoon and a sunny summer evening.
+
+* **Astronomical Features:** The model calculates the exact sun elevation angle for each location. This helps the model distinguish between a dark winter afternoon and a sunny summer evening.
+
+* **Data Leakage Avoidance:** To prevent data leakage, feature engineering is strictly aligned with the 48-hour forecast horizon. Electricity prices utilize a 24-hour lag, while autoregressive consumption features are lagged by a minimum of 48 hours. Additionally, the model mimics a production environment by training on historical weather actuals and utilizing weather forecasts for future inference.
 
 ### 3. Training & Validation
-The model is trained using an **8-fold Time Series Split** scheme. This ensures the model is tested on "future" data it hasn't seen during training, simulating real-world forecasting conditions.
+The model is trained using an **8-fold Time Series Split** scheme where each fold represents one month. This ensures the model is tested on "future" data it hasn't seen during training, simulating real-world forecasting conditions. It also makes it easy to analyze the performance of the model in different months.
 
 * **CV Score (MAPE):** ~5.8% (Average across folds)
 
 ## 📊 Results
 
-The final model produces a robust 48-hour forecast that accounts for weather changes, solar activity, and historical consumption patterns.
-* **Final forecasted average MAPE:** 6.55%
+* **Final forecasted average MAPE:** 6.44%
 
 <img width="1242" height="552" alt="image" src="https://github.com/user-attachments/assets/9c82694f-a637-4859-bbba-e5fa0ccc4cd0" />
 
